@@ -22,7 +22,7 @@ table {
   text-align: center;
   }
   th {
-  background: #BCEBDD;
+  background: #055e44;
   color: white;
   text-shadow: 0 1px 1px #2D2020;
   padding: 10px 20px;
@@ -32,26 +32,20 @@ table {
   border-width: 0 1px 1px 0;
   border-color: white;
   }
-  th:first-child, td:first-child {
-  text-align: left;
-  }
-  th:first-child {
-  border-top-left-radius: 10px;
-  }
-  th:last-child {
-  border-top-right-radius: 10px;
-  border-right: none;
-  }
   td {
   padding: 10px 20px;
   background: #F8E391;
+  word-break: break-word;
   }
-  tr:last-child td:first-child {
-  border-radius: 0 0 0 10px;
+  .trap {
+    text-align: center;
+    background-color: #F8E391;
+    padding: 10px 20px;
+    margin: 10px;
   }
-  tr:last-child td:last-child {
-  border-radius: 0 0 10px 0;
-  }
-  tr td:last-child {
-  border-right: none;
+  .instructions {
+    background-color: #F8E391;
+    padding: 10px 20px;
+    margin: 10px;
+    border: #F8E391;
   }

@@ -12,7 +12,6 @@ class RequestChannel < ApplicationCable::Channel
   end
 
   def speak
-
     logger.info "RequestChannel, speak: #{data.inspect}"
 
     ActionCable.server.broadcast 'request_channel', message: 'Hello from server!'
