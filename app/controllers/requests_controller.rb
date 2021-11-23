@@ -21,6 +21,9 @@ class RequestsController < ApplicationController
 
     if @request.save
       render :trap, notice: I18n.t('activerecord.controllers.traps.create')
+
+      ActionCable.server.broadcast('request_channel', message: @request)
+      # ActionCable.server.broadcast 'requests:request', html: render_to_string(partial: 'request', locals: { request: @request })
     else
       render :index
     end
