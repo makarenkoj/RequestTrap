@@ -5,8 +5,6 @@ class RequestsController < ApplicationController
     @requests = Request.where(trap_id: params[:trap_id])
   end
 
-  def show; end
-
   def create
     @request = Request.create({
                                 remote_ip: request.remote_ip,
@@ -21,9 +19,6 @@ class RequestsController < ApplicationController
 
     if @request.save
       render :trap, notice: I18n.t('activerecord.controllers.traps.create')
-
-      ActionCable.server.broadcast('request_channel', message: @request)
-      # ActionCable.server.broadcast 'requests:request', html: render_to_string(partial: 'request', locals: { request: @request })
     else
       render :index
     end

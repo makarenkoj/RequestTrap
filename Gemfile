@@ -26,7 +26,6 @@ group :development, :test do
   gem 'ffaker'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'shoulda-matchers'
-  gem 'standard'
 end
 
 group :development do

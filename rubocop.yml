@@ -1,20 +1,19 @@
-require: rubocop-rails
+# require: rubocop-rails
 
-AllCops:
-  Exclude:
-    - config/initializers/secret_token.rb
+# AllCops:
+#     SuggestExtensions: false
 
-Rails:
-  Enabled: true
+# Rails:
+#   Enabled: true
 
-Style/FrozenStringLiteralComment:
-  Enabled: true
+# Style/FrozenStringLiteralComment:
+#   Enabled: true
 
-Metrics/LineLength:
-  Max: 120
+# Metrics/LineLength:
+#   Max: 120
 
-Style/Documentation:
-  Enabled: false
+# Style/Documentation:
+#   Enabled: false
 
-Metrics/MethodLength:
-  Max: 30
+# Metrics/MethodLength:
+#   Max: 30
