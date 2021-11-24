@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  protect_from_forgery except: [:create] # Otherwise the request from PayPal wouldn't make it to the controller
+  protect_from_forgery except: [:create]
 
   def index
     @requests = Request.where(trap_id: params[:trap_id])
