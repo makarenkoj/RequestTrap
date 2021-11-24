@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :requests
 
-  root 'requests#show'
+  root "requests#show"
 
-  get '/:trap_id/requests', to: 'requests#index'
+  get "/:trap_id/requests", to: "requests#index"
 
-  match '/:trap_id', to: 'requests#create', via: :all
+  match "/:trap_id", to: "requests#create", via: :all
 end
