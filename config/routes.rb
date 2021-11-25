@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :requests
+
+  root "requests#show"
+
+  get "/:trap_id/requests", to: "requests#index"
+
+  match "/:trap_id", to: "requests#create", via: :all
 end

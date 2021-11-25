@@ -1,0 +1,20 @@
+<%= turbo_stream_from :requests %>
+
+<table>
+  <thead>
+    <tr>
+      <th>trap_id:</th>
+      <th>request date:</th>
+      <th>remote ip:</th>
+      <th>request-method:</th>
+      <th>scheme:</th>
+      <th>query-string:</th>
+      <th>query-params:</th>
+      <th>cookies:</th>
+      <th>headers:</th>
+    </tr>
+  </thead>
+  <tbody id="requests" >
+    <%= render @requests %>
+  </tbody>
+</table>
