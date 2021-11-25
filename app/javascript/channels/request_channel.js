@@ -13,10 +13,11 @@ consumer.subscriptions.create("RequestChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    $('#messages').prepend(data.message)
     console.log('Recived data: ' + data)
   },
 
   speak: function() {
-    return this.perform('speak');
+    return this.perform('speak', { message: message });
   }
 });

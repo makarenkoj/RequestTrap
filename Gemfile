@@ -12,6 +12,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
+gem "rails-i18n", "~> 6.0"
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
@@ -20,13 +21,12 @@ group :development, :test do
   gem 'ffaker'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'shoulda-matchers'
-  gem 'standard'
+  gem "standard", "~> 0.0.36"
 end
 
 group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
-  gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end

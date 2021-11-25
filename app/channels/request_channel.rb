@@ -1,19 +1,15 @@
 class RequestChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
     logger.info 'Subscribed to RequestChannel'
 
-    stream_from "request_channel #{params[:trap_id]}"
+    stream_from "request_channel"
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
     logger.info 'Unsubscribed to RequestChannel'
   end
 
-  def speak
+  def speak(data)
     logger.info "RequestChannel, speak: #{data.inspect}"
-
-    ActionCable.server.broadcast 'request_channel', message: 'Hello from server!'
   end
 end

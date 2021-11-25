@@ -30,15 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-controllers:
-  users:
-    updated: 'You have updated your profile'
-    destroyed: 'User was successfully deleted :('
-
-  shops:
-    updated: 'You have updated your shop'
-    destroyed: "#{@shop.name} was successfully deleted :("
-  
-  traps:
-    create: 'Request created!'
+  controllers:
+    traps:
+      create: 'Request created!'
+      eror: 'Something went wrong :('

@@ -12,7 +12,7 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe '/rooms', type: :request do
+RSpec.describe '/requests', type: :request do
   # Room. As you add validations to Room, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
@@ -25,58 +25,58 @@ RSpec.describe '/rooms', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Room.create! valid_attributes
-      get rooms_url
+      Request.create! valid_attributes
+      get requests_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      room = Room.create! valid_attributes
-      get room_url(room)
+      request = Request.create! valid_attributes
+      get request_url(request)
       expect(response).to be_successful
     end
   end
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_room_url
+      get new_request_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /edit' do
     it 'render a successful response' do
-      room = Room.create! valid_attributes
-      get edit_room_url(room)
+      request = Request.create! valid_attributes
+      get edit_request_url(requests)
       expect(response).to be_successful
     end
   end
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new Room' do
+      it 'creates a new Request' do
         expect do
-          post rooms_url, params: { room: valid_attributes }
-        end.to change(Room, :count).by(1)
+          post requests_url, params: { request: valid_attributes }
+        end.to change(Request, :count).by(1)
       end
 
-      it 'redirects to the created room' do
-        post rooms_url, params: { room: valid_attributes }
-        expect(response).to redirect_to(room_url(Room.last))
+      it 'redirects to the created request' do
+        post requests_url, params: { request: valid_attributes }
+        expect(response).to redirect_to(request_url(Request.last))
       end
     end
 
     context 'with invalid parameters' do
-      it 'does not create a new Room' do
+      it 'does not create a new Request' do
         expect do
-          post rooms_url, params: { room: invalid_attributes }
-        end.to change(Room, :count).by(0)
+          post requsets_url, params: { request: invalid_attributes }
+        end.to change(Request, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post rooms_url, params: { room: invalid_attributes }
+        post requests_url, params: { request: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -88,42 +88,42 @@ RSpec.describe '/rooms', type: :request do
         skip('Add a hash of attributes valid for your model')
       end
 
-      it 'updates the requested room' do
-        room = Room.create! valid_attributes
-        patch room_url(room), params: { room: new_attributes }
-        room.reload
+      it 'updates the requested request' do
+        request = Request.create! valid_attributes
+        patch request_url(request), params: { request: new_attributes }
+        request.reload
         skip('Add assertions for updated state')
       end
 
-      it 'redirects to the room' do
-        room = Room.create! valid_attributes
-        patch room_url(room), params: { room: new_attributes }
-        room.reload
-        expect(response).to redirect_to(room_url(room))
+      it 'redirects to the request' do
+        request = Request.create! valid_attributes
+        patch request_url(request), params: { request: new_attributes }
+        request.reload
+        expect(response).to redirect_to(request_url(request))
       end
     end
 
     context 'with invalid parameters' do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        room = Room.create! valid_attributes
-        patch room_url(room), params: { room: invalid_attributes }
+        request = Request.create! valid_attributes
+        patch request_url(request), params: { request: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe 'DELETE /destroy' do
-    it 'destroys the requested room' do
-      room = Room.create! valid_attributes
+    it 'destroys the requested request' do
+      request = Request.create! valid_attributes
       expect do
-        delete room_url(room)
-      end.to change(Room, :count).by(-1)
+        delete request_url(request)
+      end.to change(Request, :count).by(-1)
     end
 
-    it 'redirects to the rooms list' do
-      room = Room.create! valid_attributes
-      delete room_url(room)
-      expect(response).to redirect_to(rooms_url)
+    it 'redirects to the requests list' do
+      request = Request.create! valid_attributes
+      delete request_url(request)
+      expect(response).to redirect_to(requests_url)
     end
   end
 end
