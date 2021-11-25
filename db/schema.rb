@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_211_118_213_659) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+ActiveRecord::Schema.define(version: 2021_11_18_213659) do
 
-  create_table 'requests', force: :cascade do |t|
-    t.string 'remote_ip'
-    t.string 'method'
-    t.string 'scheme'
-    t.string 'query_string'
-    t.string 'query_params'
-    t.string 'cookies'
-    t.string 'headers'
-    t.string 'trap_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "requests", force: :cascade do |t|
+    t.string "remote_ip"
+    t.string "method"
+    t.string "scheme"
+    t.string "query_string"
+    t.string "query_params"
+    t.string "cookies"
+    t.string "headers"
+    t.integer "trap_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
 end

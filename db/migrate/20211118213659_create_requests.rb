@@ -8,7 +8,7 @@ class CreateRequests < ActiveRecord::Migration[6.1]
       t.string :query_params
       t.string :cookies
       t.string :headers
-      t.string :trap_id
+      t.integer :trap_id
 
       t.timestamps
     end
